@@ -1,0 +1,80 @@
+import os
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
+
+@app.route('/careers')
+def careers():
+    return render_template("careers.html")
+
+@app.route('/baking')
+def baking():
+    return render_template("baking.html")
+
+@app.route('/breakfast')
+def breakfast():
+    return render_template("breakfast.html")
+
+@app.route('/dessert')
+def dessert():
+    return render_template("dessert.html")
+
+@app.route('/dinner')
+def dinner():
+    return render_template("dinner.html")
+
+@app.route('/lunch')
+def lunch():
+    return render_template("lunch.html")
+
+
+@app.route('/snacks')
+def snacks():
+    return render_template("snacks.html")
+# @app.route('/')
+# def index():
+#     return render_template("index.html")
+
+# @app.route('/')
+# def baking():
+#     return render_template("baking.html")
+
+
+
+# @app.route('/')
+# def dessert():
+#     return render_template("dessert.html")
+
+# @app.route('/')
+# def dinner():
+#     return render_template("dinner.html")
+
+# @app.route('/')
+# def lunch():
+#     return render_template("lunch.html")
+
+# @app.route('/')
+# def snacks():
+#     return render_template("snacks.html")
+
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=(os.environ.get('PORT')),
+            debug=True)
+    

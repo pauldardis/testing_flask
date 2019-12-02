@@ -1,0 +1,28 @@
+ <html>
+
+<head>
+    <title>Hello Flask</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('careers') }}">Careers</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('baking') }}">Baking</a></li>
+            <li><a href="{{ url_for('breakfast') }}">Breakfast</a></li>
+            <li><a href="{{ url_for('dessert') }}">Dessert</a></li>
+            <li><a href="{{ url_for('dinner') }}">Dinner</a></li>
+            <li><a href="{{ url_for('lunch') }}">Lunch</a></li>
+            <li><a href="{{ url_for('snacks') }}">Snacks</a></li> 
+        </ul>
+    </nav>
+
+    {% block content %} {% endblock %}
+</body>
+
+</html> 
+

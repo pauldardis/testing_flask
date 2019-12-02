@@ -1,0 +1,139 @@
+body {
+  padding-top: 56px;
+}
+
+.recipe-h1-text {
+    text-align: center;
+    margin-bottom: 1.4em;
+    color: #222;
+    /*font-size: 2em;*/
+    /*line-height: 1.2;*/
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.recipe-main-image-container {
+    height: 500;
+    width: 300;
+    margin-bottom: 20px;
+}
+
+.recipe-main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.recipe-info-text-container {
+    display: inline-block
+}
+
+.recipe-info-container {
+    /*border-color: black;*/
+    /*border-style: solid;*/
+}
+
+.recipe-icon-container {
+    display: inline-block;
+}
+
+.recipe-info-text-container {
+    display: inline-block
+}
+
+.servings {
+    color: #D2AB74;
+}
+
+.recipe-ingredients-container {
+    border: 1px solid #f2ece3;
+    padding: 12px 24px;
+}
+
+.recipe-ingredients-heading {
+
+}
+
+
+
+
+
+
+
+
+/* Customize the label (the container) */
+.ingredient_tick_box_container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: small;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.ingredient_tick_box_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.ingredient_tick_box_checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.ingredient_tick_box_container:hover input ~ .ingredient_tick_box_checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.ingredient_tick_box_container input:checked ~ .ingredient_tick_box_checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.ingredient_tick_box_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.ingredient_tick_box_container input:checked ~ .ingredient_tick_box_checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.ingredient_tick_box_container .ingredient_tick_box_checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.recipe_steps_text{
+    /*/font-weight: 500;
+    font-family: 'Oswald', sans-serif;*/
+    font-size: medium;
+}
