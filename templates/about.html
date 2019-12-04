@@ -6,29 +6,29 @@
 <h1> This is where i start about</h1>
 
 <div class="container">
-	{% for member in company %}
+	{% for menu in menu_list %}
 	<div >
 		{% if loop.index % 2 != 0 %}
 		<div>
-			<div class="">
-				<div class="card menu_card">
-					<img src="{{ member.image_source }}" class="card-img-top" alt="menu_image">
+			<div class="col-md-6 col-lg-4 col-xl-4">
+				<div class="card menu_card ">
+					<img src="{{ menu.image_source }}" class="card-img-top" alt="menu_image">
 					<div class="card-body">
-						<h2 class="card-title">{{ loop.index }}. {{ member.name }}</h2>
+						<h2 class="card-title">{{ loop.index }}. {{ menu.name }}</h2>
 						<p class="card-text"></p>
-						<a href="/about/{{member.url}}" class="btn btn-primary">Find Recipes</a>
+						<a href="/about/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
 					</div>
 				</div>
 			</div>
 
 			{% else %}
-			<div class="">
+			<div class="col-md-6 col-lg-4 col-xl-4">
 				<div class="card menu_card" >
-					<img src="{{ member.image_source }}" class="card-img-top" alt="menu_image">
+					<img src="{{ menu.image_source }}" class="card-img-top" alt="menu_image">
 					<div class="card-body">
-						<h2 class="card-title">{{ loop.index }}. {{ member.name }}</h2>
+						<h2 class="card-title">{{ loop.index }}. {{ menu.name }}</h2>
 						<p class="card-text"></p>
-						<a href="/about/{{member.url}}" class="btn btn-primary">Find Recipes</a>
+						<a href="/about/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
 					</div>
 				</div>
 			</div>

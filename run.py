@@ -13,21 +13,21 @@ def index():
 @app.route('/about')
 def about():
     data = []
-    with open("data/company.json", "r") as json_data:
+    with open("data/menu_list.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("about.html", page_title="About", company = data)
+    return render_template("about.html", page_title="About", menu_list = data)
 
-@app.route("/about/<member_name>")
-def about_member(member_name):
-    member = {}
+@app.route("/about/<menu_name>")
+def about_menu(menu_name):
+    menu = {}
 
-    with open("data/company.json", "r") as json_data:
+    with open("data/menu_list.json", "r") as json_data:
         data = json.load(json_data)
         for obj in data:
-            if obj["url"] == member_name:
-                member = obj
+            if obj["url"] == menu_name:
+                menu = obj
     
-    return render_template("member.html", member=member)
+    return render_template("menu.html", menu=menu)
 
 
 @app.route('/contact')
