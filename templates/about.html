@@ -1,3 +1,47 @@
 {% extends 'base.html' %} {% block content %}
 <h1>About</h1>
+
+<h1> This is where i start building the cards</h1>
+<h1> This is where i start building the cards</h1>
+<h1> This is where i start about</h1>
+
+<div class="container">
+	{% for member in company %}
+	<div >
+		{% if loop.index % 2 != 0 %}
+		<div>
+			<div class="">
+				<div class="card menu_card">
+					<img src="{{ member.image_source }}" class="card-img-top" alt="menu_image">
+					<div class="card-body">
+						<h2 class="card-title">{{ loop.index }}. {{ member.name }}</h2>
+						<p class="card-text"></p>
+						<a href="/about/{{member.url}}" class="btn btn-primary">Find Recipes</a>
+					</div>
+				</div>
+			</div>
+
+			{% else %}
+			<div class="">
+				<div class="card menu_card" >
+					<img src="{{ member.image_source }}" class="card-img-top" alt="menu_image">
+					<div class="card-body">
+						<h2 class="card-title">{{ loop.index }}. {{ member.name }}</h2>
+						<p class="card-text"></p>
+						<a href="/about/{{member.url}}" class="btn btn-primary">Find Recipes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+	{% if loop.index != 13 %}
+
+	<!-- <hr class="featurette-divider"> -->
+
+	{%endif %}
+
+
+	{% endfor %}
+</div>
 {% endblock %}
