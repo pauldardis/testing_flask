@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<h1>About</h1>
+<h1>meals</h1>
 
 <h1> This is where i start building the cards</h1>
 <h1> This is where i start building the cards</h1>
-<h1> This is where i start about</h1>
+<h1> This is where i start meals</h1>
 
 <div class="container">
 	{% for menu in menu_list %}
@@ -16,7 +16,7 @@
 					<div class="card-body">
 						<h2 class="card-title">{{ loop.index }}. {{ menu.name }}</h2>
 						<p class="card-text"></p>
-						<a href="/about/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
+						<a href="/meals/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
 					</div>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 					<div class="card-body">
 						<h2 class="card-title">{{ loop.index }}. {{ menu.name }}</h2>
 						<p class="card-text"></p>
-						<a href="/about/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
+						<a href="/meals/{{menu.url}}" class="btn btn-primary">Find Recipes</a>
 					</div>
 				</div>
 			</div>

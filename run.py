@@ -10,15 +10,15 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/about')
-def about():
+@app.route('/meals')
+def meals():
     data = []
     with open("data/menu_list.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("about.html", page_title="About", menu_list = data)
+    return render_template("meals.html", page_title="meals", menu_list = data)
 
-@app.route("/about/<menu_name>")
-def about_menu(menu_name):
+@app.route("/meals/<menu_name>")
+def meals_menu(menu_name):
     menu = {}
 
     with open("data/menu_list.json", "r") as json_data:
