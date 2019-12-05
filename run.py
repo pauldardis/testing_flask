@@ -52,7 +52,17 @@ def breakfast_meals_breakfast_recipy(breakfast_recipy_name):
     return render_template("breakfast_recipy.html", breakfast_recipy=breakfast_recipy)
 
 
+@app.route("/breakfast/<breakfast_recipy_name>")
+def about_breakfast_recipy(breakfast_recipy_name):
+    breakfast_recipy = {}
 
+    with open("data/breakfast_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == breakfast_recipy_name:
+                breakfast_recipy = obj
+    
+    return render_template("breakfast_recipy.html", breakfast_recipy=breakfast_recipy)
 
 
 

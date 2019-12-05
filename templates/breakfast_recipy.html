@@ -1,0 +1,138 @@
+{% extends 'base.html' %} {% block content %}
+<h1>
+	<h1>
+
+
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<h1 class="mt-4">{{ breakfast_recipy.name }}</h1>
+
+					<hr>
+
+					<!-- Recipe Image -->
+					<img class="img-fluid rounded" src ="/{{ breakfast_recipy.image_source }}" alt="Profile image for {{breakfast_recipy.name }}">
+
+					<hr>
+
+					<!-- Recipe Info -->
+					<div class="container">
+						<div class="row">
+							<section class="col-md-3 recipe-info-container">
+								<div class="recipe-icon-container">
+									<i class="fas fa-utensils fa-3x"></i>
+								</div>
+								<div class="recipe-info-text-container">
+									<div>
+										<strong>YIELDS</strong>
+									</div>
+									<div>
+										<a class="servings" href="#">{{ breakfast_recipy.servings }}</a>
+									</div>
+								</div>
+							</section>
+							<section class="col-md-3 recipe-info-container">
+								<div class="recipe-icon-container">
+									<i class="far fa-clock fa-3x"></i>
+								</div>
+								<div class="recipe-info-text-container">
+									<div>
+										<strong>PREP TIME</strong>
+									</div>
+									<div>
+										<a href="#">{{ breakfast_recipy.prep_time }}</a>
+									</div>
+								</div>
+							</section>
+							<section class="col-md-3 recipe-info-container">
+								<div class="recipe-icon-container">
+									<i class="far fa-clock fa-3x"></i>
+								</div>
+								<div class="recipe-info-text-container">
+									<div>
+										<strong>COOK TIME</strong>
+									</div>
+									<div>
+										<a href="#">{{ breakfast_recipy.cook_time }}</a>
+									</div>
+								</div>
+							</section>
+							<section class="col-md-3 recipe-info-container">
+								<div class="recipe-icon-container">
+									<i class="far fa-clock fa-3x"></i>
+								</div>
+								<div class="recipe-info-text-container">
+									<div>
+										<strong>TOTAL TIME</strong>
+									</div>
+									<div>
+										<a href="#">{{ breakfast_recipy.total_time }}</a>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<hr>
+
+					<!-- IngredientsInfo -->
+					<div class="">
+						<div class="recipe-ingredients-heading">
+							<h2>Ingredients</h2>
+							<div>
+								<label class="ingredient_tick_box_container">ingredient 1 <input type="checkbox"><span class="ingredient_tick_box_checkmark"></span></label>
+								<label class="ingredient_tick_box_container">ingredient 2 <input type="checkbox"><span class="ingredient_tick_box_checkmark"></span></label>
+								<label class="ingredient_tick_box_container">ingredient 3 <input type="checkbox"><span class="ingredient_tick_box_checkmark"></span></label>
+								<label class="ingredient_tick_box_container">ingredient 4 <input type="checkbox"><span class="ingredient_tick_box_checkmark"></span></label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<!--step by step instructions-->
+					<div>
+
+						<h4></h4>
+						<p>{{breakfast_recipy.step1}}</p>
+						<h4></h4>
+						<p>{{breakfast_recipy.step2}}</p>
+                        <h4></h4>
+						<p>{{breakfast_recipy.step3}}</p>
+                        <h4></h4>
+						<p>{{breakfast_recipy.step4}}</p>
+                        <h4></h4>
+						<p>{{breakfast_recipy.step5}}</p>
+                        <h4></h4>
+						<p>{{breakfast_recipy.step6}}</p>
+
+					</div>
+
+					<hr>
+
+					<!-- Comments Form -->
+					<div class="card my-4">
+						<h5 class="card-header">Leave a Comment:</h5>
+						<div class="card-body">
+							<form>
+								<div class="form-group">
+									<textarea class="form-control" rows="3"></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+		{% endblock %}

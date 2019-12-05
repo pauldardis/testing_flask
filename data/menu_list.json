@@ -5,11 +5,11 @@
         "url":"breakfast"
     },{
         "name": "Lunch",
-        "image_source": "static/images/breakfast.jpg",
+        "image_source": "static/images/lunch.jpg",
         "url":"lunch"
     },{
         "name": "Dinner",
-        "image_source": "static/images/breakfast.jpg",
+        "image_source": "static/images/dinner.jpg",
         "url":"dinner"
     },{
         "name": "Snacks",
@@ -17,11 +17,11 @@
         "url":"snacks"
     },{
         "name": "Baking",
-        "image_source": "static/images/breakfast.jpg",
+        "image_source": "static/images/baking.jpg",
         "url":"baking"
     },{
         "name": "Dessert",
-        "image_source": "static/images/breakfast.jpg",
+        "image_source": "static/images/desert.jpg",
         "url":"dessert"
     }
 
