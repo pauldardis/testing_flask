@@ -4,11 +4,9 @@ from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return render_template("index.html")
-
 
 @app.route('/meals')
 def meals():
@@ -29,9 +27,6 @@ def meals_menu(menu_name):
     
     return render_template("menu.html", menu=menu)
 
-
-
-
 @app.route('/breakfast')
 def breakfast_meals():
     data = []
@@ -51,7 +46,6 @@ def breakfast_meals_breakfast_recipy(breakfast_recipy_name):
     
     return render_template("breakfast_recipy.html", breakfast_recipy=breakfast_recipy)
 
-
 @app.route("/breakfast/<breakfast_recipy_name>")
 def about_breakfast_recipy(breakfast_recipy_name):
     breakfast_recipy = {}
@@ -63,6 +57,50 @@ def about_breakfast_recipy(breakfast_recipy_name):
                 breakfast_recipy = obj
     
     return render_template("breakfast_recipy.html", breakfast_recipy=breakfast_recipy)
+
+
+@app.route('/lunch')
+def lunch_meals():
+    data = []
+    with open("data/lunch_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("lunch.html", page_title="lunch_meals", lunch_recipy_list = data)
+
+@app.route("/lunch_meals/<lunch_recipy_name>")
+def lunch_meals_lunch_recipy(lunch_recipy_name):
+    lunch_recipy = {}
+
+    with open("data/lunch_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == lunch_recipy_name:
+                lunch_recipy = obj
+    
+    return render_template("lunch_recipy.html", lunch_recipy=lunch_recipy)
+
+@app.route("/lunch/<lunch_recipy_name>")
+def about_lunch_recipy(lunch_recipy_name):
+    lunch_recipy = {}
+
+    with open("data/lunch_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == lunch_recipy_name:
+                lunch_recipy = obj
+    
+    return render_template("lunch_recipy.html", lunch_recipy=lunch_recipy)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -104,31 +142,6 @@ def lunch():
 @app.route('/snacks')
 def snacks():
     return render_template("snacks.html")
-# @app.route('/')
-# def index():
-#     return render_template("index.html")
-
-# @app.route('/')
-# def baking():
-#     return render_template("baking.html")
-
-
-
-# @app.route('/')
-# def dessert():
-#     return render_template("dessert.html")
-
-# @app.route('/')
-# def dinner():
-#     return render_template("dinner.html")
-
-# @app.route('/')
-# def lunch():
-#     return render_template("lunch.html")
-
-# @app.route('/')
-# def snacks():
-#     return render_template("snacks.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
