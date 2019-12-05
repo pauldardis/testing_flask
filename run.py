@@ -30,6 +30,37 @@ def meals_menu(menu_name):
     return render_template("menu.html", menu=menu)
 
 
+
+
+@app.route('/breakfast')
+def breakfast_meals():
+    data = []
+    with open("data/breakfast_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("breakfast.html", page_title="breakfast_meals", breakfast_recipy_list = data)
+
+@app.route("/breakfast_meals/<breakfast_recipy_name>")
+def breakfast_meals_breakfast_recipy(breakfast_recipy_name):
+    breakfast_recipy = {}
+
+    with open("data/breakfast_recipy_list.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == breakfast_recipy_name:
+                breakfast_recipy = obj
+    
+    return render_template("breakfast_recipy.html", breakfast_recipy=breakfast_recipy)
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
